@@ -1,0 +1,33 @@
+
+local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/kickTh/New-Ui/main/Shadow_Ui.txt"))()
+
+local Main = library:CreateWindow("GUNHUA","Crimson")
+
+local tab = Main:CreateTab("Main")
+local tab2 = Main:CreateTab("Misc")
+
+tab:CreateButton("Button",function()
+print("Button")
+end)
+
+tab:CreateToggle("Toggle",function(vu)
+_G.Toggle = vu
+end)
+
+tab:CreateSlider("Slider",1,16,function(a)
+print(a)
+end)
+
+tab:CreateCheckbox("Checkbox",function(a)
+print(a)
+end)
+
+tab:CreateDropdown("Dropdown",{"1","2","3"},function(a)
+print(a)
+end)
+
+tab2:CreateButton("",function()
+print("clicked")
+end)
+
+tab:Show()
