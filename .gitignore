@@ -1,41 +1,33 @@
-# Compiled Lua sources
-luac.out
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/kickTh/New-Ui/main/Shadow_Ui.txt"))()
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+local Main = library:CreateWindow("GUNHUA#00FF39","Crimson")
 
-# Precompiled Headers
-*.gch
-*.pch
+local tab = Main:CreateTab("Main")
+local tab2 = Main:CreateTab("Misc")
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+tab:CreateButton("Button",function()
+print("Button")
+end)
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+tab:CreateToggle("Toggle",function(vu)
+_G.Toggle = vu
+end)
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+tab:CreateSlider("Slider",1,16,function(a)
+print(a)
+end)
 
+tab:CreateCheckbox("Checkbox",function(a)
+print(a)
+end)
+
+tab:CreateDropdown("Dropdown",{"1","2","3"},function(a)
+print(a)
+end)
+
+tab2:CreateButton("",function()
+print("clicked")
+end)
+
+tab:Show()
